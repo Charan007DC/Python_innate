@@ -1,0 +1,258 @@
+
+1 - Single Inheritance
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_person(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+
+class Student(Person):
+    def __init__(self, name, age, roll_no):
+        super().__init__(name, age)
+        self.roll_no = roll_no
+
+    def display_student(self):
+        self.display_person()
+        print("Roll No:", self.roll_no)
+
+s = Student("Vidhesh", 20, 101)
+s.display_student()
+
+
+
+
+2 - Single Inheritance
+class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def show_brand(self):
+        print("Brand:", self.brand)
+
+class Car(Vehicle):
+    def __init__(self, brand, model):
+        super().__init__(brand)
+        self.model = model
+
+    def show_model(self):
+        print("Model:", self.model)
+
+c = Car("Toyota", "Innova")
+c.show_brand()
+c.show_model()
+
+
+
+3 - Multilevel Inheritance
+class Animal:
+    def eat(self):
+        print("Animal is eating")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog is barking")
+
+class Puppy(Dog):
+    def weep(self):
+        print("Puppy is weeping")
+
+p = Puppy()
+p.eat()
+p.bark()
+p.weep()
+
+
+
+4 - Multilevel Inheritance
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+class Employee(Person):
+    def __init__(self, name, salary):
+        super().__init__(name)
+        self.salary = salary
+
+class Manager(Employee):
+    def __init__(self, name, salary, department):
+        super().__init__(name, salary)
+        self.department = department
+
+    def display(self):
+        print("Name:", self.name)
+        print("Salary:", self.salary)
+        print("Department:", self.department)
+
+m = Manager("Arun", 50000, "HR")
+m.display()
+
+
+
+5 - Multiple Inheritance
+class Father:
+    def bike(self):
+        print("Father owns a bike")
+
+class Mother:
+    def jewellery(self):
+        print("Mother owns jewellery")
+
+class Child(Father, Mother):
+    pass
+
+c = Child()
+c.bike()
+c.jewellery()
+
+
+
+6 - Multiple Inheritance
+class Teacher:
+    def teach(self):
+        print("Teaching students")
+
+class Researcher:
+    def research(self):
+        print("Doing research")
+
+class Professor(Teacher, Researcher):
+    pass
+
+p = Professor()
+p.teach()
+p.research()
+
+
+
+7 - Hierarchical Inheritance
+class Shape:
+    pass
+
+class Circle(Shape):
+    def draw(self):
+        print("Drawing Circle")
+
+class Rectangle(Shape):
+    def draw(self):
+        print("Drawing Rectangle")
+
+class Triangle(Shape):
+    def draw(self):
+        print("Drawing Triangle")
+
+
+8 - Hierarchical Inheritance
+class Employee:
+    def work(self):
+        print("Employee is working")
+
+class Developer(Employee):
+    pass
+
+class Tester(Employee):
+    pass
+
+
+
+
+9 - Hybrid Inheritance
+class A:
+    def methodA(self):
+        print("Method A")
+
+class B(A):
+    def methodB(self):
+        print("Method B")
+
+class C(A):
+    def methodC(self):
+        print("Method C")
+
+class D(B, C):
+    def methodD(self):
+        print("Method D")
+
+
+10 - Hybrid Inheritance
+class Employee:
+    def employee(self):
+        print("Employee Method")
+
+class Manager(Employee):
+    def manage(self):
+        print("Manager Method")
+
+class Developer(Employee):
+    def develop(self):
+        print("Developer Method")
+
+class TeamLead(Manager, Developer):
+    def lead(self):
+        print("Team Lead Method")
+
+
+11 - Constructor with super()
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Student(Person):
+    def __init__(self, name, age, roll):
+        super().__init__(name, age)
+        self.roll = roll
+
+
+
+12 - Constructor Inheritance
+class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
+
+class Car(Vehicle):
+    def __init__(self, brand, model, price):
+        super().__init__(brand)
+        self.model = model
+        self.price = price
+
+
+
+13 - Banking System
+class Account:
+    def __init__(self, account_number, balance):
+        self.account_number = account_number
+        self.balance = balance
+
+class SavingsAccount(Account):
+    def __init__(self, account_number, balance, interest_rate):
+        super().__init__(account_number, balance)
+        self.interest_rate = interest_rate
+
+
+
+14 - School Management
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Teacher(Person):
+    def __init__(self, name, age, subject):
+        super().__init__(name, age)
+        self.subject = subject
+
+
+
+15 - Online Shopping
+class Product:
+    def __init__(self, product_name, price):
+        self.product_name = product_name
+        self.price = price
+
+class Electronics(Product):
+    def __init__(self, product_name, price, warranty):
+        super().__init__(product_name, price)
+        self.warranty = warranty
